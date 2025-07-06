@@ -1,4 +1,4 @@
-import { Clock, Users, Trophy, Music } from "lucide-react";
+import { Clock, Users, Trophy, Music, Coffee } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -34,17 +34,17 @@ const EventProgram = () => {
 
   const sundayProgram = [
     {
-      time: "11:00",
-      title: "Aufbau Beerpong",
-      description: "Vorbereitung der Beerpong-Tische",
-      icon: Users
-    },
-    {
       time: "13:00",
       title: "Beerpong-Turnier",
       description: "Anmeldung erforderlich - Spannende Matches mit Preisen",
       icon: Trophy,
       highlight: true
+    },
+    {
+      time: "15:00",
+      title: "Großes Kuchenbuffet",
+      description: "Kuchenbuffet der Külter Landfrauen",
+      icon: Coffee
     },
     {
       time: "16:00",
