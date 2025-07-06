@@ -26,7 +26,7 @@ const EventProgram = () => {
     {
       time: "19:00",
       title: "Live Musik",
-      description: "Abendprogramm mit lokalen Bands",
+      description: "Abendprogramm mit Müller Meier Schulze",
       icon: Music,
       highlight: true
     }
