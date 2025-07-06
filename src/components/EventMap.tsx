@@ -1,10 +1,21 @@
 import { MapPin, Car, Users, Trophy } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+
+// Type declarations for Google Maps
+declare global {
+  interface Window {
+    google: any;
+  }
+}
 
 const EventMap = () => {
   const latitude = 51.39973369994141;
   const longitude = 9.064432302455169;
+  const [mapsLoaded, setMapsLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
   // Create Google Maps URL
   const mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}&z=15`;
@@ -33,6 +44,53 @@ const EventMap = () => {
     }
   ];
 
+  useEffect(() => {
+    const loadGoogleMaps = async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke('get-maps-config');
+        
+        if (error) throw error;
+        
+        if (!data?.scriptUrl) {
+          throw new Error('Keine Maps-Konfiguration erhalten');
+        }
+
+        // Load Google Maps script
+        const script = document.createElement('script');
+        script.src = data.scriptUrl;
+        script.async = true;
+        script.onload = () => {
+          setMapsLoaded(true);
+          
+          // Initialize the map once loaded
+          const mapElement = document.getElementById('google-map');
+          if (mapElement && window.google) {
+            const map = new window.google.maps.Map(mapElement, {
+              center: { lat: latitude, lng: longitude },
+              zoom: 14,
+              mapId: 'DEMO_MAP_ID'
+            });
+
+            // Add marker
+            new window.google.maps.marker.AdvancedMarkerElement({
+              map,
+              position: { lat: latitude, lng: longitude },
+              title: 'KÜLTE Open Air Event 2025'
+            });
+          }
+        };
+        script.onerror = () => setError('Fehler beim Laden der Karte');
+        document.head.appendChild(script);
+
+      } catch (err) {
+        console.error('Error loading Google Maps:', err);
+        setError(err instanceof Error ? err.message : 'Fehler beim Laden der Karte');
+      }
+    };
+
+    loadGoogleMaps();
+  }, []);
+
   return (
     <section id="karte" className="py-16 px-4 bg-white">
       <div className="container mx-auto">
@@ -54,33 +112,29 @@ const EventMap = () => {
               </CardHeader>
               <CardContent>
                 <div className="aspect-video bg-green-50 rounded-lg border-2 border-green-200 relative overflow-hidden">
-                  <iframe
-                    src={`https://www.google.com/maps/embed/v1/view?key=&center=${latitude},${longitude}&zoom=15&maptype=roadmap`}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-lg"
-                    title="Event Location Map"
-                    onError={() => {
-                      // Fallback if iframe fails to load
-                      const iframe = document.querySelector('#map-fallback');
-                      if (iframe) {
-                        iframe.innerHTML = `
-                          <div class="flex items-center justify-center h-full bg-green-100">
-                            <div class="text-center text-green-700">
-                              <MapPin class="w-12 h-12 mx-auto mb-2" />
-                              <p class="font-semibold">Karte wird geladen...</p>
-                              <p class="text-sm">Koordinaten: ${latitude}, ${longitude}</p>
-                            </div>
-                          </div>
-                        `;
-                      }
-                    }}
-                  />
-                  <div id="map-fallback" className="absolute inset-0 hidden"></div>
+                  {mapsLoaded ? (
+                    <div 
+                      id="google-map"
+                      className="w-full h-full rounded-lg"
+                    />
+                  ) : error ? (
+                    <div className="flex items-center justify-center h-full bg-green-100">
+                      <div className="text-center text-green-700">
+                        <MapPin className="w-12 h-12 mx-auto mb-2" />
+                        <p className="font-semibold">Karte konnte nicht geladen werden</p>
+                        <p className="text-sm">{error}</p>
+                        <p className="text-sm mt-2">Koordinaten: {latitude}, {longitude}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center h-full bg-green-100">
+                      <div className="text-center text-green-700">
+                        <MapPin className="w-12 h-12 mx-auto mb-2" />
+                        <p className="font-semibold">Karte wird geladen...</p>
+                        <p className="text-sm">Koordinaten: {latitude}, {longitude}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="mt-4 space-y-3">
