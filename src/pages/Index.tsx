@@ -2,9 +2,12 @@ import { Calendar, MapPin, Users, Trophy, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import EventHero from "@/components/EventHero";
-import SharedLayout from "@/components/SharedLayout";
+import EventProgram from "@/components/EventProgram";
+import BeerpongRegistration from "@/components/BeerpongRegistration";
+import EventMap from "@/components/EventMap";
+import ContactFAQ from "@/components/ContactFAQ";
+import AboutUs from "@/components/AboutUs";
 
 const Index = () => {
   return (
@@ -15,11 +18,11 @@ const Index = () => {
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-primary">KÜLTE 2025</div>
             <div className="hidden md:flex space-x-6">
-              <Link to="/programm" className="text-primary hover:text-primary/80 transition-colors">Programm</Link>
-              <Link to="/anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</Link>
-              <Link to="/karte" className="text-primary hover:text-primary/80 transition-colors">Anfahrt</Link>
-              <Link to="/kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</Link>
-              <Link to="/ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</Link>
+              <a href="#programm" className="text-primary hover:text-primary/80 transition-colors">Programm</a>
+              <a href="#anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
+              <a href="#karte" className="text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
+              <a href="#kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</a>
+              <a href="#ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</a>
             </div>
           </div>
         </div>
@@ -27,65 +30,11 @@ const Index = () => {
 
       <main>
         <EventHero />
-        
-        {/* Quick Navigation Cards */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="bg-white/90 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <Calendar className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-primary">Programm</CardTitle>
-                  <CardDescription>Alle Events & Zeiten</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Link to="/programm">
-                    <Button variant="outline" className="w-full">Zum Programm</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/90 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <Trophy className="w-12 h-12 text-accent mx-auto mb-2" />
-                  <CardTitle className="text-primary">Beerpong</CardTitle>
-                  <CardDescription>Team anmelden</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Link to="/anmeldung">
-                    <Button className="w-full bg-accent hover:bg-accent/90">Jetzt anmelden</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/90 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-primary">Anfahrt</CardTitle>
-                  <CardDescription>Weg zu uns finden</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Link to="/karte">
-                    <Button variant="outline" className="w-full">Zur Karte</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white/90 backdrop-blur-sm border-primary/20 shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <Mail className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-primary">Kontakt</CardTitle>
-                  <CardDescription>Fragen & Antworten</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Link to="/kontakt">
-                    <Button variant="outline" className="w-full">Kontakt & FAQ</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <EventProgram />
+        <BeerpongRegistration />
+        <EventMap />
+        <ContactFAQ />
+        <AboutUs />
       </main>
 
       {/* Footer */}
