@@ -15,7 +15,7 @@ const EventHero = () => {
 
       <div className="container mx-auto relative z-10 space-y-8">
         <Badge variant="outline" className="bg-white/20 text-white border-white/30 text-lg px-6 py-2 mb-6">
-          TURNIER DER STRASSENMANNSCHAFTEN
+          Dorffest & Turnier der Straßenmannschaften
         </Badge>
         
         <div className="bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl max-w-3xl mx-auto">
