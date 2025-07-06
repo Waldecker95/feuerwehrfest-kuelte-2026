@@ -45,7 +45,7 @@ const Index = () => {
             <p className="text-primary-foreground/80">23.-24. August 2025 • Turnier der Straßenmannschaften</p>
             <div className="flex justify-center space-x-6">
               <Badge variant="outline" className="bg-white/20 text-white border-white/30">
-                kulte-events.de
+                kuelte-events.de
               </Badge>
             </div>
             <p className="text-sm text-primary-foreground/60">
