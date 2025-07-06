@@ -49,37 +49,45 @@ const EventMap = () => {
       try {
         const { data, error } = await supabase.functions.invoke('get-maps-config');
         
-        if (error) throw error;
+        if (error) {
+          console.error('Supabase function error:', error);
+          throw error;
+        }
         
-        if (!data?.scriptUrl) {
+        if (!data?.apiKey) {
           throw new Error('Keine Maps-Konfiguration erhalten');
         }
+
+        console.log('Loading Google Maps with API key available');
 
         // Load Google Maps script
         const script = document.createElement('script');
         script.src = data.scriptUrl;
         script.async = true;
         script.onload = () => {
+          console.log('Google Maps script loaded successfully');
           setMapsLoaded(true);
           
           // Initialize the map once loaded
-          const mapElement = document.getElementById('google-map');
-          if (mapElement && window.google) {
-            const map = new window.google.maps.Map(mapElement, {
-              center: { lat: latitude, lng: longitude },
-              zoom: 14,
-              mapId: 'DEMO_MAP_ID'
-            });
+          setTimeout(() => {
+            const mapElement = document.getElementById('google-map');
+            if (mapElement && window.google) {
+              const map = new window.google.maps.Map(mapElement, {
+                center: { lat: latitude, lng: longitude },
+                zoom: 14,
+                mapId: 'DEMO_MAP_ID'
+              });
 
-            // Add marker
-            new window.google.maps.marker.AdvancedMarkerElement({
-              map,
-              position: { lat: latitude, lng: longitude },
-              title: 'KÜLTE Open Air Event 2025'
-            });
-          }
+              // Add marker
+              new window.google.maps.marker.AdvancedMarkerElement({
+                map,
+                position: { lat: latitude, lng: longitude },
+                title: 'KÜLTE Open Air Event 2025'
+              });
+            }
+          }, 100);
         };
-        script.onerror = () => setError('Fehler beim Laden der Karte');
+        script.onerror = () => setError('Fehler beim Laden der Google Maps API');
         document.head.appendChild(script);
 
       } catch (err) {
