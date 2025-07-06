@@ -2,7 +2,7 @@ import { Users, Heart, Trophy, Home } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 const AboutUs = () => {
-  const sponsors = ["Dorfgemeinschaft Külte", "Ortsverein TV08", "Lokale Unternehmen", "Freiwillige Helfer"];
+  const sponsors = ["Dorfgemeinschaft Külte", "Turnverein 08 Külte e.V.", "Lokale Unternehmen", "Freiwillige Helfer"];
   const values = [{
     icon: Heart,
     title: "Gemeinschaft",
@@ -88,7 +88,7 @@ const AboutUs = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-800 mb-2">TV08 Külte</div>
+                <div className="text-3xl font-bold text-green-800 mb-2">Turnverein 08 Külte e.V.</div>
                 <p className="text-green-600 mb-4">
                   Unser örtlicher Turnverein organisiert das Event ehrenamtlich 
                   mit Unterstützung der gesamten Dorfgemeinschaft.
