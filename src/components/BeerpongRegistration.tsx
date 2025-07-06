@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const BeerpongRegistration = () => {
   const { toast } = useToast();
@@ -17,7 +18,9 @@ const BeerpongRegistration = () => {
     phone: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -41,22 +44,47 @@ const BeerpongRegistration = () => {
       return;
     }
 
-    // TODO: Hier wird später die Supabase-Integration erfolgen
-    console.log("Beerpong Team Registration:", formData);
-    
-    toast({
-      title: "Anmeldung erfolgreich!",
-      description: `Team "${formData.teamName}" wurde erfolgreich angemeldet.`,
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      teamName: "",
-      player1: "",
-      player2: "",
-      email: "",
-      phone: ""
-    });
+    try {
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('beerpong_registrations')
+        .insert({
+          team_name: formData.teamName,
+          player1: formData.player1,
+          player2: formData.player2,
+          email: formData.email,
+          phone: formData.phone || null
+        });
+
+      if (error) {
+        throw error;
+      }
+      
+      toast({
+        title: "Anmeldung erfolgreich!",
+        description: `Team "${formData.teamName}" wurde erfolgreich angemeldet.`,
+      });
+
+      // Reset form
+      setFormData({
+        teamName: "",
+        player1: "",
+        player2: "",
+        email: "",
+        phone: ""
+      });
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast({
+        title: "Fehler",
+        description: "Bei der Anmeldung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -172,9 +200,10 @@ const BeerpongRegistration = () => {
                 type="submit" 
                 size="lg" 
                 className="w-full bg-accent hover:bg-accent/90 text-white py-4 text-lg rounded-lg shadow-lg"
+                disabled={isSubmitting}
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Team anmelden
+                {isSubmitting ? "Wird angemeldet..." : "Team anmelden"}
               </Button>
             </form>
           </CardContent>
