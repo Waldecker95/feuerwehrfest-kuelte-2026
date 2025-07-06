@@ -37,7 +37,7 @@ const ContactFAQ = () => {
     },
     {
       question: "Gibt es Verpflegung vor Ort?",
-      answer: "Ja, wir bieten Getränke und Snacks an. Am Samstag gibt es außerdem Kaffee und hausgemachenen Kuchen."
+      answer: "Ja, wir bieten Getränke und Snacks an. Am Samstag und Sonntag gibt es Kaffee und hausgemachenen Kuchen."
     },
     {
       question: "Was passiert bei schlechtem Wetter?",
