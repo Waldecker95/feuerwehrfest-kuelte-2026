@@ -26,15 +26,16 @@ const EventProgram = () => {
     highlight: true
   }];
   const sundayProgram = [{
-    time: "11:00",
-    title: "Aufbau Beerpong",
-    description: "Vorbereitung der Beerpong-Tische",
-    icon: Users
-  }, {
     time: "13:00",
     title: "Beerpong-Turnier",
     description: "Anmeldung erforderlich - Spannende Matches mit Preisen",
     icon: Trophy,
+    highlight: true
+  }, {
+    time: "15:00",
+    title: "Großes Kuchenbuffet der Külter Landfrauen",
+    description: "Hausgemachte Kuchen und Torten",
+    icon: Users,
     highlight: true
   }, {
     time: "16:00",
