@@ -190,6 +190,7 @@ const BeerpongRegistration = () => {
                 <h4 className="font-semibold text-primary mb-2">Wichtige Informationen:</h4>
                 <ul className="text-sm text-primary/80 space-y-1">
                   <li>• Teams bestehen aus genau 2 Spielern</li>
+                  <li>• Startgebühr: 15€</li>
                   <li>• Anmeldeschluss: 22.08.2025, 23:59 Uhr</li>
                   <li>• Turnierbeginn: Sonntag, 13:00 Uhr</li>
                   <li>• Tolle Preise für die besten Teams!</li>
