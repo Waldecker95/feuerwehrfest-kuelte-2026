@@ -1,8 +1,11 @@
 import { Calendar, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const EventHero = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
       {/* Background decoration */}
@@ -45,11 +48,15 @@ const EventHero = () => {
           </Badge>
           
           <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-white px-8 py-4 text-lg rounded-full shadow-lg"
+            size={isMobile ? "default" : "lg"}
+            className={`bg-accent hover:bg-accent/90 text-white rounded-full shadow-lg transition-all ${
+              isMobile 
+                ? "w-full px-4 py-3 text-base" 
+                : "px-8 py-4 text-lg"
+            }`}
             onClick={() => document.getElementById('anmeldung')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Jetzt Beerpong-Team anmelden
+            {isMobile ? "Beerpong-Team anmelden" : "Jetzt Beerpong-Team anmelden"}
           </Button>
         </div>
       </div>
