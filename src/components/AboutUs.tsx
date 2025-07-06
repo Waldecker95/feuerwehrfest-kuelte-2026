@@ -1,44 +1,30 @@
 import { Users, Heart, Trophy, Home } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 const AboutUs = () => {
-  const sponsors = [
-    "Dorfgemeinschaft Külte",
-    "Turnverein 08 Külte e.V.",
-    "Lokale Unternehmen",
-    "Freiwillige Helfer"
-  ];
-
-  const values = [
-    {
-      icon: Heart,
-      title: "Gemeinschaft",
-      description: "Zusammenhalt und Freundschaft stehen im Mittelpunkt unseres Dorffestes",
-      color: "text-red-500"
-    },
-    {
-      icon: Trophy,
-      title: "Tradition",
-      description: "Das Turnier der Straßenmannschaften ist eine langjährige Tradition in Külte",
-      color: "text-yellow-500"
-    },
-    {
-      icon: Users,
-      title: "Für alle",
-      description: "Jung und Alt, Einheimische und Gäste - alle sind herzlich willkommen",
-      color: "text-blue-500"
-    },
-    {
-      icon: Home,
-      title: "Heimatverbunden",
-      description: "Wir feiern unser schönes Dorf und die Menschen, die es zum Zuhause machen",
-      color: "text-green-500"
-    }
-  ];
-
-  return (
-    <section id="ueber-uns" className="py-16 px-4 bg-white">
+  const sponsors = ["Dorfgemeinschaft Külte", "Ortsverein TV08", "Lokale Unternehmen", "Freiwillige Helfer"];
+  const values = [{
+    icon: Heart,
+    title: "Gemeinschaft",
+    description: "Zusammenhalt und Freundschaft stehen im Mittelpunkt unseres Dorffestes",
+    color: "text-red-500"
+  }, {
+    icon: Trophy,
+    title: "Tradition",
+    description: "Das Turnier der Straßenmannschaften ist eine langjährige Tradition in Külte",
+    color: "text-yellow-500"
+  }, {
+    icon: Users,
+    title: "Für alle",
+    description: "Jung und Alt, Einheimische und Gäste - alle sind herzlich willkommen",
+    color: "text-blue-500"
+  }, {
+    icon: Home,
+    title: "Heimatverbunden",
+    description: "Wir feiern unser schönes Dorf und die Menschen, die es zum Zuhause machen",
+    color: "text-green-500"
+  }];
+  return <section id="ueber-uns" className="py-16 px-4 bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <Home className="w-16 h-16 text-green-600 mx-auto mb-4" />
@@ -65,13 +51,7 @@ const AboutUs = () => {
                   Mit der Erweiterung um das Beerpong-Turnier und Live-Musik sprechen wir heute alle 
                   Generationen an und schaffen unvergessliche Momente des Zusammenhalts.
                 </p>
-                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                  <h4 className="font-semibold text-green-800 mb-2">Unser Motto:</h4>
-                  <p className="text-green-700 italic">
-                    "Dou bis nau ni an Külte vorbei över" - 
-                    Ein Fest für alle, die unser Dorf lieben!
-                  </p>
-                </div>
+                
               </CardContent>
             </Card>
           </div>
@@ -84,15 +64,13 @@ const AboutUs = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {values.map((value, index) => (
-                    <div key={index} className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
+                  {values.map((value, index) => <div key={index} className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
                       <value.icon className={`w-6 h-6 ${value.color} mt-1 flex-shrink-0`} />
                       <div>
                         <h4 className="font-semibold text-green-800">{value.title}</h4>
                         <p className="text-green-600 text-sm leading-relaxed">{value.description}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </CardContent>
             </Card>
@@ -110,7 +88,7 @@ const AboutUs = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-800 mb-2">TV 08 Külte e.V. & Heimatverein</div>
+                <div className="text-3xl font-bold text-green-800 mb-2">TV08 Külte</div>
                 <p className="text-green-600 mb-4">
                   Unser örtlicher Turnverein organisiert das Event ehrenamtlich 
                   mit Unterstützung der gesamten Dorfgemeinschaft.
@@ -143,13 +121,11 @@ const AboutUs = () => {
               </p>
               
               <div className="space-y-2">
-                {sponsors.map((sponsor, index) => (
-                  <div key={index} className="flex items-center justify-center">
+                {sponsors.map((sponsor, index) => <div key={index} className="flex items-center justify-center">
                     <Badge variant="outline" className="border-green-300 text-green-700 bg-green-50">
                       {sponsor}
                     </Badge>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-center">
@@ -163,8 +139,6 @@ const AboutUs = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutUs;
