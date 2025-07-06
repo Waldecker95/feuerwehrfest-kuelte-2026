@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 const AboutUs = () => {
   const sponsors = [
     "Dorfgemeinschaft Külte",
-    "Ortsverein TV08",
+    "Turnverein 08 Külte e.V.",
     "Lokale Unternehmen",
     "Freiwillige Helfer"
   ];
