@@ -101,8 +101,8 @@ const AboutUs = () => {
               <div className="bg-green-50 p-4 rounded-lg border border-green-200 text-center">
                 <h4 className="font-semibold text-green-800 mb-2">Kontakt Veranstalter:</h4>
                 <p className="text-green-700 text-sm">
-                  E-Mail: info@kulte-events.de<br />
-                  Web: kulte-events.de
+                  E-Mail: info@kuelte-events.de<br />
+                  Web: kuelte-events.de
                 </p>
               </div>
             </CardContent>
