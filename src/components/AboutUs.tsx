@@ -32,7 +32,7 @@ const AboutUs = () => {
     {
       icon: Home,
       title: "Heimatverbunden",
-      description: "Wir feiern unser schönes Dorf und die Menschen, die es zu Hause machen",
+      description: "Wir feiern unser schönes Dorf und die Menschen, die es zum Zuhause machen",
       color: "text-green-500"
     }
   ];
