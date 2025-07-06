@@ -64,22 +64,22 @@ const BeerpongRegistration = () => {
   };
 
   return (
-    <section id="anmeldung" className="py-16 px-4 bg-gradient-to-br from-green-50 to-green-100">
+    <section id="anmeldung" className="py-16 px-4 bg-gradient-to-br from-blue-50 to-blue-100">
       <div className="container mx-auto max-w-2xl">
         <div className="text-center mb-12">
-          <Trophy className="w-16 h-16 text-green-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-green-800 mb-4">Beerpong-Team anmelden</h2>
-          <p className="text-xl text-green-600 mb-6">
+          <Trophy className="w-16 h-16 text-accent mx-auto mb-4" />
+          <h2 className="text-4xl font-bold text-primary mb-4">Beerpong-Team anmelden</h2>
+          <p className="text-xl text-accent mb-6">
             Melden Sie Ihr Team für das Beerpong-Turnier am Sonntag an
           </p>
-          <Badge className="bg-green-600 text-white px-4 py-2">
+          <Badge className="bg-primary text-white px-4 py-2">
             Anmeldung bis 22.08.2025
           </Badge>
         </div>
 
-        <Card className="bg-white/90 backdrop-blur-sm border-green-200 shadow-xl">
+        <Card className="bg-white/90 backdrop-blur-sm border-primary/20 shadow-xl">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl text-green-800 flex items-center justify-center space-x-2">
+            <CardTitle className="text-2xl text-primary flex items-center justify-center space-x-2">
               <Users className="w-6 h-6" />
               <span>Team-Anmeldung</span>
             </CardTitle>
@@ -87,7 +87,7 @@ const BeerpongRegistration = () => {
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="teamName" className="text-green-800 font-medium">
+                <Label htmlFor="teamName" className="text-primary font-medium">
                   Team-Name *
                 </Label>
                 <Input
@@ -95,14 +95,14 @@ const BeerpongRegistration = () => {
                   value={formData.teamName}
                   onChange={(e) => handleInputChange("teamName", e.target.value)}
                   placeholder="z.B. Die Dorfkönige"
-                  className="border-green-300 focus:border-green-500"
+                  className="border-primary/30 focus:border-primary"
                   required
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="player1" className="text-green-800 font-medium">
+                  <Label htmlFor="player1" className="text-primary font-medium">
                     Spieler 1 *
                   </Label>
                   <Input
@@ -110,12 +110,12 @@ const BeerpongRegistration = () => {
                     value={formData.player1}
                     onChange={(e) => handleInputChange("player1", e.target.value)}
                     placeholder="Vor- und Nachname"
-                    className="border-green-300 focus:border-green-500"
+                    className="border-primary/30 focus:border-primary"
                     required
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="player2" className="text-green-800 font-medium">
+                  <Label htmlFor="player2" className="text-primary font-medium">
                     Spieler 2 *
                   </Label>
                   <Input
@@ -123,14 +123,14 @@ const BeerpongRegistration = () => {
                     value={formData.player2}
                     onChange={(e) => handleInputChange("player2", e.target.value)}
                     placeholder="Vor- und Nachname"
-                    className="border-green-300 focus:border-green-500"
+                    className="border-primary/30 focus:border-primary"
                     required
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-green-800 font-medium">
+                <Label htmlFor="email" className="text-primary font-medium">
                   E-Mail-Adresse *
                 </Label>
                 <Input
@@ -139,13 +139,13 @@ const BeerpongRegistration = () => {
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   placeholder="team@example.com"
-                  className="border-green-300 focus:border-green-500"
+                  className="border-primary/30 focus:border-primary"
                   required
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-green-800 font-medium">
+                <Label htmlFor="phone" className="text-primary font-medium">
                   Telefonnummer (optional)
                 </Label>
                 <Input
@@ -154,13 +154,13 @@ const BeerpongRegistration = () => {
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   placeholder="+49 123 456789"
-                  className="border-green-300 focus:border-green-500"
+                  className="border-primary/30 focus:border-primary"
                 />
               </div>
 
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <h4 className="font-semibold text-green-800 mb-2">Wichtige Informationen:</h4>
-                <ul className="text-sm text-green-700 space-y-1">
+              <div className="bg-blue-50 p-4 rounded-lg border border-primary/20">
+                <h4 className="font-semibold text-primary mb-2">Wichtige Informationen:</h4>
+                <ul className="text-sm text-primary/80 space-y-1">
                   <li>• Teams bestehen aus genau 2 Spielern</li>
                   <li>• Anmeldeschluss: 22.08.2025, 23:59 Uhr</li>
                   <li>• Turnierbeginn: Sonntag, 13:00 Uhr</li>
@@ -171,7 +171,7 @@ const BeerpongRegistration = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg rounded-lg shadow-lg"
+                className="w-full bg-accent hover:bg-accent/90 text-white py-4 text-lg rounded-lg shadow-lg"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Team anmelden
