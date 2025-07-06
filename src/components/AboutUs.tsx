@@ -88,7 +88,7 @@ const AboutUs = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-800 mb-2">Turnverein 08 Külte e.V.</div>
+                <div className="text-3xl font-bold text-green-800 mb-2">Turnverein 08 Külte e.V. & Heimatverein</div>
                 <p className="text-green-600 mb-4">
                   Unser örtlicher Turnverein organisiert das Event ehrenamtlich 
                   mit Unterstützung der gesamten Dorfgemeinschaft.
