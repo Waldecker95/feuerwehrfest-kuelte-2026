@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactFAQ = () => {
   const { toast } = useToast();
@@ -49,7 +50,7 @@ const ContactFAQ = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!contactForm.name || !contactForm.email || !contactForm.subject || !contactForm.message) {
@@ -61,20 +62,45 @@ const ContactFAQ = () => {
       return;
     }
 
-    // TODO: Hier wird später die E-Mail-Integration erfolgen
-    console.log("Contact Form:", contactForm);
-    
-    toast({
-      title: "Nachricht gesendet!",
-      description: "Vielen Dank für Ihre Nachricht. Wir melden uns bald bei Ihnen.",
-    });
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: contactForm.name,
+          email: contactForm.email,
+          subject: contactForm.subject,
+          message: contactForm.message
+        }
+      });
 
-    setContactForm({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+      if (error) {
+        console.error('Error sending email:', error);
+        toast({
+          title: "Fehler",
+          description: "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Nachricht gesendet!",
+        description: "Vielen Dank für Ihre Nachricht. Wir melden uns bald bei Ihnen.",
+      });
+
+      setContactForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error sending contact email:', error);
+      toast({
+        title: "Fehler",
+        description: "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
