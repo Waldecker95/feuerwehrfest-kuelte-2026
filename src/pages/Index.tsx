@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import EventHero from "@/components/EventHero";
 import EventProgram from "@/components/EventProgram";
 import BeerpongRegistration from "@/components/BeerpongRegistration";
+import BeerpongRules from "@/components/BeerpongRules";
 import EventMap from "@/components/EventMap";
 import ContactFAQ from "@/components/ContactFAQ";
 import AboutUs from "@/components/AboutUs";
@@ -21,6 +22,7 @@ const Index = () => {
               <a href="#programm" className="text-primary hover:text-primary/80 transition-colors">Programm</a>
               <a href="#anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
               <a href="/beerpong-anmeldung" className="text-primary hover:text-primary/80 transition-colors">Beerpong</a>
+              <a href="#regeln" className="text-primary hover:text-primary/80 transition-colors">Regeln</a>
               <a href="#karte" className="text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
               <a href="#kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</a>
               <a href="#ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</a>
@@ -33,6 +35,7 @@ const Index = () => {
         <EventHero />
         <EventProgram />
         <BeerpongRegistration />
+        <BeerpongRules />
         <EventMap />
         <ContactFAQ />
         <AboutUs />
