@@ -20,6 +20,7 @@ const Index = () => {
             <div className="hidden md:flex space-x-6">
               <a href="#programm" className="text-primary hover:text-primary/80 transition-colors">Programm</a>
               <a href="#anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
+              <a href="/beerpong-anmeldung" className="text-primary hover:text-primary/80 transition-colors">Beerpong</a>
               <a href="#karte" className="text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
               <a href="#kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</a>
               <a href="#ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</a>
