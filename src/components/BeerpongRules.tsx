@@ -33,13 +33,13 @@ const BeerpongRules = () => {
                 <h4 className="font-bold text-lg mb-3 text-primary">Vorrunde (Losturnier)</h4>
                 <ul className="space-y-2 text-sm">
                   <li>• Bis zu einem festgelegten Zeitpunkt wird ein Losturnier gespielt</li>
-                  <li>• Teams werden vor jeder Runde neu ausgelost</li>
+                  <li>• Angemeldete Teams werden vor jeder Runde neu ausgelost</li>
                 </ul>
                 
                 <div className="mt-4 p-4 bg-accent/10 rounded-lg">
                   <h5 className="font-semibold mb-2">Punktevergabe:</h5>
                   <ul className="space-y-1 text-sm">
-                    <li>• <span className="font-medium">+1 Punkt</span> pro getroffenen Becher</li>
+                    <li>• <span className="font-medium">+1 Punkt</span> pro getroffenen Becher pro Team</li>
                     <li>• <span className="font-medium">+3 Punkte</span> zusätzlich für das siegreiche Team</li>
                   </ul>
                 </div>
@@ -50,18 +50,18 @@ const BeerpongRules = () => {
               <div>
                 <h4 className="font-bold text-lg mb-3 text-primary">Playoffs</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Die besten 8 Spieler ziehen in die Playoffs ein</li>
+                  <li>• Die besten 4 Teams ziehen in die Playoffs ein</li>
                 </ul>
                 
                 <div className="mt-4 space-y-3">
                   <div className="p-3 bg-secondary/10 rounded-lg">
                     <h5 className="font-semibold mb-2">Halbfinale:</h5>
                     <ul className="space-y-1 text-sm">
-                      <li>• Spiel 1: Platz 1 & 8 vs. Platz 4 & 5</li>
-                      <li>• Spiel 2: Platz 2 & 7 vs. Platz 3 & 6</li>
+                      <li>• Spiel 1: Team Platz 1 vs. Team Platz 4</li>
+                      <li>• Spiel 2: Team Platz 2 vs. Team Platz 3</li>
                     </ul>
                   </div>
-                  <p className="text-sm">Die Gewinner beider Spiele treten im <span className="font-semibold">Finale</span> gegeneinander an.</p>
+                  <p className="text-sm">Die Siegerteams beider Spiele treten im <span className="font-semibold">Finale</span> gegeneinander an.</p>
                 </div>
               </div>
             </CardContent>
@@ -97,9 +97,9 @@ const BeerpongRules = () => {
                 </h4>
                 <ul className="space-y-2 text-sm">
                   <li>• Jedes Teammitglied muss pro Durchgang werfen</li>
-                  <li>• <span className="font-medium">Aufsetzer:</span> 2 Punkte</li>
-                  <li>• <span className="font-medium">Double Shot:</span> 3 Punkte (beide Bälle im gleichen Becher)</li>
-                  <li>• <span className="font-medium">Balls Back:</span> Wenn beide Spieler treffen</li>
+                  <li>• <span className="font-medium">Aufsetzer:</span> 2 Punkte für das Team</li>
+                  <li>• <span className="font-medium">Double Shot:</span> 3 Punkte für das Team (beide Bälle im gleichen Becher)</li>
+                  <li>• <span className="font-medium">Balls Back:</span> Wenn beide Teammitglieder treffen</li>
                 </ul>
                 
                 <div className="mt-3 p-3 bg-accent/10 rounded-lg">
@@ -126,12 +126,12 @@ const BeerpongRules = () => {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               <ul className="space-y-2 text-sm">
-                <li>• Einmaliges Nachstellen pro Spiel erlaubt</li>
+                <li>• Einmaliges Nachstellen pro Team pro Spiel erlaubt</li>
                 <li>• Kein Pusten oder Fingern erlaubt</li>
                 <li>• Keine Gastwürfe</li>
               </ul>
               <ul className="space-y-2 text-sm">
-                <li>• Beginner wird durch Schere-Stein-Papier ermittelt</li>
+                <li>• Beginner-Team wird durch Schere-Stein-Papier ermittelt</li>
                 <li>• Keine Nachwürfe nach Spielende</li>
               </ul>
             </div>
