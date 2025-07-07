@@ -3,9 +3,74 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BeerpongRegistration from "@/components/BeerpongRegistration";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const BeerpongAnmeldung = () => {
   const navigate = useNavigate();
+
+  // Update meta tags for social media sharing
+  useEffect(() => {
+    // Update page title
+    document.title = "🏆 Beerpong-Turnier Anmeldung - KÜLTE 2025";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€ • Anmeldeschluss: 22.08.2025');
+    }
+
+    // Update Open Graph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', '🏆 Beerpong-Turnier Anmeldung - KÜLTE 2025');
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€ • Anmeldeschluss: 22.08.2025');
+    }
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute('content', window.location.href);
+    }
+
+    // Update Twitter tags
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) {
+      twitterTitle.setAttribute('content', '🏆 Beerpong-Turnier Anmeldung - KÜLTE 2025');
+    }
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€');
+    }
+
+    // Cleanup function to restore original meta tags when leaving the page
+    return () => {
+      document.title = "KÜLTE Open Air Event 2025 - Turnier der Straßenmannschaften";
+      
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 'KÜLTE Open Air Event am 23.-24.08.2025 mit Live Musik, Kinderprogramm, Beerpong-Turnier und traditionellem Handballturnier der Straßenmannschaften');
+      }
+      
+      if (ogTitle) {
+        ogTitle.setAttribute('content', 'KÜLTE Open Air Event 2025 - Turnier der Straßenmannschaften');
+      }
+      
+      if (ogDescription) {
+        ogDescription.setAttribute('content', 'Erleben Sie zwei Tage voller Spaß, Sport und Gemeinschaft beim KÜLTE Open Air Event mit Live Musik, Turnieren und vielem mehr!');
+      }
+      
+      if (twitterTitle) {
+        twitterTitle.setAttribute('content', 'KÜLTE Open Air Event 2025 - Turnier der Straßenmannschaften');
+      }
+      
+      if (twitterDescription) {
+        twitterDescription.setAttribute('content', 'Erleben Sie zwei Tage voller Spaß, Sport und Gemeinschaft beim KÜLTE Open Air Event mit Live Musik, Turnieren und vielem mehr!');
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
