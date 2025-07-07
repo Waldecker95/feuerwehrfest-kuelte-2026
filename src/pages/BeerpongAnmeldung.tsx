@@ -17,7 +17,7 @@ const BeerpongAnmeldung = () => {
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€ • Anmeldeschluss: 22.08.2025');
+      metaDescription.setAttribute('content', 'Melde dein 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Anmeldeschluss: 22.08.2025');
     }
 
     // Update Open Graph tags
@@ -28,7 +28,7 @@ const BeerpongAnmeldung = () => {
 
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) {
-      ogDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€ • Anmeldeschluss: 22.08.2025');
+      ogDescription.setAttribute('content', 'Melde dein 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Anmeldeschluss: 22.08.2025');
     }
 
     const ogUrl = document.querySelector('meta[property="og:url"]');
@@ -44,7 +44,7 @@ const BeerpongAnmeldung = () => {
 
     const twitterDescription = document.querySelector('meta[name="twitter:description"]');
     if (twitterDescription) {
-      twitterDescription.setAttribute('content', 'Melden Sie Ihr 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Preise im Wert von 250€');
+      twitterDescription.setAttribute('content', 'Melde dein 2er-Team für das große Beerpong-Turnier am 24.08.2025 an! Startgebühr 15€ • Anmeldeschluss: 22.08.2025');
     }
 
     // Cleanup function to restore original meta tags when leaving the page
