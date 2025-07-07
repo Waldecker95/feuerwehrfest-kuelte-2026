@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -15,7 +16,8 @@ const BeerpongRegistration = () => {
     player1: "",
     player2: "",
     email: "",
-    phone: ""
+    phone: "",
+    newsletter: false
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,7 +57,8 @@ const BeerpongRegistration = () => {
           player1: formData.player1,
           player2: formData.player2,
           email: formData.email,
-          phone: formData.phone || null
+          phone: formData.phone || null,
+          newsletter_subscription: formData.newsletter
         });
 
       if (error) {
@@ -73,7 +76,8 @@ const BeerpongRegistration = () => {
         player1: "",
         player2: "",
         email: "",
-        phone: ""
+        phone: "",
+        newsletter: false
       });
     } catch (error) {
       console.error('Registration error:', error);
@@ -186,6 +190,30 @@ const BeerpongRegistration = () => {
                 />
               </div>
 
+              <div className="space-y-2">
+                <div className="flex items-start space-x-3">
+                  <Checkbox
+                    id="newsletter"
+                    checked={formData.newsletter}
+                    onCheckedChange={(checked) => 
+                      setFormData(prev => ({ ...prev, newsletter: !!checked }))
+                    }
+                    className="mt-1"
+                  />
+                  <div className="space-y-1">
+                    <Label 
+                      htmlFor="newsletter" 
+                      className="text-sm text-primary cursor-pointer leading-5"
+                    >
+                      Newsletter abonnieren (optional)
+                    </Label>
+                    <p className="text-xs text-primary/70">
+                      Ich möchte über zukünftige Veranstaltungen in Külte per E-Mail informiert werden.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-blue-50 p-4 rounded-lg border border-primary/20">
                 <h4 className="font-semibold text-primary mb-2">Wichtige Informationen:</h4>
                 <ul className="text-sm text-primary/80 space-y-1">
@@ -195,6 +223,15 @@ const BeerpongRegistration = () => {
                   <li>• Turnierbeginn: Sonntag, 13:00 Uhr</li>
                   <li>• Tolle Preise im Wert von 250€ für die besten Teams!</li>
                 </ul>
+              </div>
+
+              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                <h4 className="font-semibold text-green-800 mb-2">Datenschutzhinweis:</h4>
+                <p className="text-sm text-green-700 leading-5">
+                  Ihre persönlichen Daten (Namen und E-Mail-Adressen) werden ausschließlich für die 
+                  Organisation des Beerpong-Turniers verwendet und nach Abschluss der Veranstaltung 
+                  automatisch gelöscht, es sei denn, Sie haben dem Newsletter-Empfang zugestimmt.
+                </p>
               </div>
 
               <Button 
