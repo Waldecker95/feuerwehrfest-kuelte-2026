@@ -2,6 +2,7 @@ import { Calendar, MapPin, Trophy, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BeerpongRegistration from "@/components/BeerpongRegistration";
+import BeerpongRules from "@/components/BeerpongRules";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -141,6 +142,7 @@ const BeerpongAnmeldung = () => {
 
       <main>
         <BeerpongRegistration />
+        <BeerpongRules />
       </main>
 
       {/* Footer */}
