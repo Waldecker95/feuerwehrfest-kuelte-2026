@@ -76,20 +76,6 @@ const BeerpongRules = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              {/* Getränke */}
-              <div>
-                <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
-                  <Beer className="w-5 h-5 text-primary" />
-                  🍺 Getränke
-                </h4>
-                <ul className="space-y-2 text-sm">
-                  <li>• Pro Spiel mindestens ein alkoholisches Getränk (0,33 l) pro Person</li>
-                  <li>• <span className="font-medium">Ziel:</span> Fairness bis zum Turnierende</li>
-                  <li>• Ausnahmen sind nach Rücksprache möglich</li>
-                </ul>
-              </div>
-
-              <Separator />
 
               {/* Becher-Anzahl */}
               <div>
