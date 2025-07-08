@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Trophy, Mail } from "lucide-react";
+import { Users, Trophy, Mail, Shield, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -246,42 +246,50 @@ const BeerpongRegistration = () => {
                 </ul>
               </div>
 
-              <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                <h4 className="font-semibold text-green-800 mb-2">Datenschutzhinweis:</h4>
-                <div className="text-sm text-green-700 leading-5 space-y-3">
-                  <p>
-                    Ihre persönlichen Daten (Namen und E-Mail-Adressen) werden ausschließlich für die 
-                    Organisation des Beerpong-Turniers verwendet und nach Abschluss der Veranstaltung 
-                    automatisch gelöscht, es sei denn, Sie haben dem Newsletter-Empfang zugestimmt.
-                  </p>
-                  <div>
-                    <p className="font-semibold mb-1">Google Maps & Gstatic:</p>
-                    <p className="mb-2">
-                      Diese Website nutzt Google Maps zur Darstellung der Anfahrt zum Veranstaltungsort. 
-                      Dabei werden personenbezogene Daten (IP-Adresse, Standortdaten, Geräteinformationen) 
-                      an Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA übertragen 
-                      und verarbeitet.
-                    </p>
-                    <p className="mb-2">
-                      <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse 
-                      an der Bereitstellung einer interaktiven Karte).
-                    </p>
-                    <p className="mb-2">
-                      <strong>Datenübertragung in die USA:</strong> Google LLC ist nach dem EU-US Data Privacy 
-                      Framework zertifiziert. Die Übertragung erfolgt auf Grundlage eines Angemessenheitsbeschlusses 
-                      der EU-Kommission.
-                    </p>
+              <div className="bg-green-50 rounded-lg border border-green-200">
+                <details className="group">
+                  <summary className="flex items-center justify-between p-4 cursor-pointer hover:bg-green-100 rounded-lg transition-colors">
+                    <h4 className="font-semibold text-green-800 flex items-center">
+                      <Shield className="w-4 h-4 mr-2" />
+                      Datenschutzhinweis
+                    </h4>
+                    <ChevronDown className="w-4 h-4 text-green-600 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="px-4 pb-4 text-sm text-green-700 leading-5 space-y-3 border-t border-green-200/50 mt-2 pt-3">
                     <p>
-                      Weitere Informationen: 
-                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 underline ml-1">
-                        Google Datenschutzerklärung
-                      </a> | 
-                      <a href="https://www.google.com/policies/privacy/partners/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 underline ml-1">
-                        Datennutzung durch Google
-                      </a>
+                      Ihre persönlichen Daten (Namen und E-Mail-Adressen) werden ausschließlich für die 
+                      Organisation des Beerpong-Turniers verwendet und nach Abschluss der Veranstaltung 
+                      automatisch gelöscht, es sei denn, Sie haben dem Newsletter-Empfang zugestimmt.
                     </p>
+                    <div>
+                      <p className="font-semibold mb-1">Google Maps & Gstatic:</p>
+                      <p className="mb-2">
+                        Diese Website nutzt Google Maps zur Darstellung der Anfahrt zum Veranstaltungsort. 
+                        Dabei werden personenbezogene Daten (IP-Adresse, Standortdaten, Geräteinformationen) 
+                        an Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA übertragen 
+                        und verarbeitet.
+                      </p>
+                      <p className="mb-2">
+                        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse 
+                        an der Bereitstellung einer interaktiven Karte).
+                      </p>
+                      <p className="mb-2">
+                        <strong>Datenübertragung in die USA:</strong> Google LLC ist nach dem EU-US Data Privacy 
+                        Framework zertifiziert. Die Übertragung erfolgt auf Grundlage eines Angemessenheitsbeschlusses 
+                        der EU-Kommission.
+                      </p>
+                      <p>
+                        Weitere Informationen: 
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 underline ml-1">
+                          Google Datenschutzerklärung
+                        </a> | 
+                        <a href="https://www.google.com/policies/privacy/partners/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 underline ml-1">
+                          Datennutzung durch Google
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </details>
               </div>
 
               <Button 
