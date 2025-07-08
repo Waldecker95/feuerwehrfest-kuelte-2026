@@ -50,7 +50,7 @@ const BeerpongRegistration = () => {
 
     try {
       // Insert into Supabase
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('beerpong_registrations')
         .insert({
           team_name: formData.teamName,
@@ -59,15 +59,36 @@ const BeerpongRegistration = () => {
           email: formData.email,
           phone: formData.phone || null,
           newsletter_subscription: formData.newsletter
-        });
+        })
+        .select();
 
       if (error) {
         throw error;
       }
+
+      // Send confirmation email
+      try {
+        const { error: emailError } = await supabase.functions.invoke('send-registration-confirmation', {
+          body: {
+            teamId: data[0].id,
+            teamName: formData.teamName,
+            player1: formData.player1,
+            player2: formData.player2,
+            email: formData.email
+          }
+        });
+
+        if (emailError) {
+          console.error('Error sending confirmation email:', emailError);
+        }
+      } catch (emailError) {
+        console.error('Failed to send confirmation email:', emailError);
+        // Don't block registration if email fails
+      }
       
       toast({
         title: "Anmeldung erfolgreich!",
-        description: `Team "${formData.teamName}" wurde erfolgreich angemeldet.`,
+        description: `Team "${formData.teamName}" wurde erfolgreich angemeldet. Eine Bestätigungs-E-Mail ist unterwegs!`,
       });
 
       // Reset form

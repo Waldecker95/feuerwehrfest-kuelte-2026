@@ -16,6 +16,8 @@ export type Database = {
     Tables: {
       beerpong_registrations: {
         Row: {
+          confirmation_sent: boolean | null
+          confirmation_sent_at: string | null
           created_at: string
           email: string
           id: string
@@ -23,10 +25,14 @@ export type Database = {
           phone: string | null
           player1: string
           player2: string
+          reminder_sent: boolean | null
+          reminder_sent_at: string | null
           team_name: string
           updated_at: string
         }
         Insert: {
+          confirmation_sent?: boolean | null
+          confirmation_sent_at?: string | null
           created_at?: string
           email: string
           id?: string
@@ -34,10 +40,14 @@ export type Database = {
           phone?: string | null
           player1: string
           player2: string
+          reminder_sent?: boolean | null
+          reminder_sent_at?: string | null
           team_name: string
           updated_at?: string
         }
         Update: {
+          confirmation_sent?: boolean | null
+          confirmation_sent_at?: string | null
           created_at?: string
           email?: string
           id?: string
@@ -45,6 +55,8 @@ export type Database = {
           phone?: string | null
           player1?: string
           player2?: string
+          reminder_sent?: boolean | null
+          reminder_sent_at?: string | null
           team_name?: string
           updated_at?: string
         }
