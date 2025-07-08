@@ -1,7 +1,8 @@
-import { Calendar, MapPin, Users, Trophy, Mail, Phone } from "lucide-react";
+import { Calendar, MapPin, Users, Trophy, Mail, Phone, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import EventHero from "@/components/EventHero";
 import EventProgram from "@/components/EventProgram";
 import BeerpongRegistration from "@/components/BeerpongRegistration";
@@ -17,6 +18,8 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-primary">KÜLTE 2025</div>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6">
               <a href="#programm" className="text-primary hover:text-primary/80 transition-colors">Programm</a>
               <a href="#anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
@@ -25,6 +28,25 @@ const Index = () => {
               <a href="#kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</a>
               <a href="#ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</a>
             </div>
+
+            {/* Mobile Navigation */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col space-y-4 mt-8">
+                  <a href="#programm" className="text-lg text-primary hover:text-primary/80 transition-colors">Programm</a>
+                  <a href="#anmeldung" className="text-lg text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
+                  <a href="/beerpong-anmeldung" className="text-lg text-primary hover:text-primary/80 transition-colors">Beerpong</a>
+                  <a href="#karte" className="text-lg text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
+                  <a href="#kontakt" className="text-lg text-primary hover:text-primary/80 transition-colors">Kontakt</a>
+                  <a href="#ueber-uns" className="text-lg text-primary hover:text-primary/80 transition-colors">Über uns</a>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>

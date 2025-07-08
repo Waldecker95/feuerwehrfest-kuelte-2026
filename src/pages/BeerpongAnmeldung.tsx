@@ -1,6 +1,7 @@
-import { Calendar, MapPin, Trophy, ArrowLeft } from "lucide-react";
+import { Calendar, MapPin, Trophy, ArrowLeft, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import BeerpongRegistration from "@/components/BeerpongRegistration";
 import BeerpongRules from "@/components/BeerpongRules";
 import { useNavigate } from "react-router-dom";
@@ -80,14 +81,37 @@ const BeerpongAnmeldung = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold text-primary">KÜLTE 2025</div>
+            
+            {/* Desktop Navigation */}
             <Button
               variant="ghost"
               onClick={() => navigate("/")}
-              className="text-primary hover:text-primary/80"
+              className="hidden sm:flex text-primary hover:text-primary/80"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Zurück zur Hauptseite
             </Button>
+
+            {/* Mobile Navigation */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="sm:hidden">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col space-y-4 mt-8">
+                  <Button
+                    variant="ghost"
+                    onClick={() => navigate("/")}
+                    className="justify-start text-lg text-primary hover:text-primary/80"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Zurück zur Hauptseite
+                  </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>
