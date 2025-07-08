@@ -2,12 +2,9 @@ import { Calendar, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
-
 const EventHero = () => {
   const isMobile = useIsMobile();
-  
-  return (
-    <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
+  return <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-2 h-2 bg-white rounded-full animate-pulse"></div>
@@ -43,25 +40,15 @@ const EventHero = () => {
             <span className="text-xl text-primary/80">Külte, Deutschland</span>
           </div>
           
-          <Badge variant="secondary" className="bg-primary text-white text-xl px-8 py-3 rounded-full mb-8">
-            Straßenhandball & Dorffest
-          </Badge>
           
-          <Button 
-            size={isMobile ? "default" : "lg"}
-            className={`bg-accent hover:bg-accent/90 text-white rounded-full shadow-lg transition-all ${
-              isMobile 
-                ? "w-full px-4 py-3 text-base" 
-                : "px-8 py-4 text-lg"
-            }`}
-            onClick={() => document.getElementById('anmeldung')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          
+          <Button size={isMobile ? "default" : "lg"} className={`bg-accent hover:bg-accent/90 text-white rounded-full shadow-lg transition-all ${isMobile ? "w-full px-4 py-3 text-base" : "px-8 py-4 text-lg"}`} onClick={() => document.getElementById('anmeldung')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             {isMobile ? "Beerpong-Team anmelden" : "Jetzt Beerpong-Team anmelden"}
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default EventHero;
