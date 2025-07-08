@@ -248,11 +248,21 @@ const BeerpongRegistration = () => {
 
               <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                 <h4 className="font-semibold text-green-800 mb-2">Datenschutzhinweis:</h4>
-                <p className="text-sm text-green-700 leading-5">
-                  Ihre persönlichen Daten (Namen und E-Mail-Adressen) werden ausschließlich für die 
-                  Organisation des Beerpong-Turniers verwendet und nach Abschluss der Veranstaltung 
-                  automatisch gelöscht, es sei denn, Sie haben dem Newsletter-Empfang zugestimmt.
-                </p>
+                <div className="text-sm text-green-700 leading-5 space-y-2">
+                  <p>
+                    Ihre persönlichen Daten (Namen und E-Mail-Adressen) werden ausschließlich für die 
+                    Organisation des Beerpong-Turniers verwendet und nach Abschluss der Veranstaltung 
+                    automatisch gelöscht, es sei denn, Sie haben dem Newsletter-Empfang zugestimmt.
+                  </p>
+                  <p>
+                    <strong>Google Maps & Gstatic:</strong> Diese Website nutzt Google Maps zur Darstellung 
+                    der Anfahrt zum Veranstaltungsort. Dabei werden Daten an Google-Server übertragen und 
+                    von Google verarbeitet. Weitere Informationen finden Sie in der 
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 underline">
+                      Datenschutzerklärung von Google
+                    </a>.
+                  </p>
+                </div>
               </div>
 
               <Button 
