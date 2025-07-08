@@ -160,13 +160,13 @@ const ContactFAQ = () => {
               <CardContent className="space-y-4">
                 <div className="space-y-3">
                   <a 
-                    href="mailto:info@kulte-events.de"
+                    href="mailto:info@kuelte-events.de"
                     className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
                   >
                     <Mail className="w-5 h-5 text-green-600" />
                     <div>
                       <div className="font-semibold text-green-800">E-Mail</div>
-                      <div className="text-green-600 text-sm">info@kulte-events.de</div>
+                      <div className="text-green-600 text-sm">info@kuelte-events.de</div>
                     </div>
                   </a>
                   
