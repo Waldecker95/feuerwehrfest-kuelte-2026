@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to the organization
     const emailResponse = await resend.emails.send({
-      from: "KÜLTE Event Contact <onboarding@resend.dev>",
+      from: "info@kuelte-events.de",
       to: ["info@kuelte-events.de"],
       subject: `Kontaktanfrage: ${subject}`,
       html: `
