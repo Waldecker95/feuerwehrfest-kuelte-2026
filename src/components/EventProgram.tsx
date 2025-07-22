@@ -10,7 +10,7 @@ const EventProgram = () => {
   }, {
     time: "12:00",
     title: "Straßenhandball-Turnier",
-    description: "Traditionelles Turnier der Straßenmannschaften - Feste Teams",
+    description: "Traditionelles Turnier der Külter Straßenmannschaften - Feste Teams",
     icon: Trophy,
     highlight: true
   }, {
