@@ -26,10 +26,39 @@ const EventProgram = () => {
     highlight: true
   }];
   const sundayProgram = [{
+    time: "10:00",
+    title: "Gottesdienst",
+    description: "Gemeinsamer Gottesdienst",
+    icon: Users
+  }, {
+    time: "10:30",
+    title: "Frühschoppen",
+    description: "Frühschoppen mit den Stadtmusikschängern Külte",
+    icon: Music,
+    highlight: true
+  }, {
+    time: "11:00",
+    title: "Kinderprogramm",
+    description: "Spiele und Aktivitäten für die kleinen Gäste",
+    icon: Users,
+    highlight: true
+  }, {
+    time: "12:00",
+    title: "Spiele ohne Grenzen",
+    description: "Spiele ohne Grenzen der Külter Straßenmannschaften",
+    icon: Trophy,
+    highlight: true
+  }, {
     time: "13:00",
     title: "Beerpong-Turnier",
     description: "Anmeldung erforderlich - Spannende Matches mit Preisen",
     icon: Trophy,
+    highlight: true
+  }, {
+    time: "15:00",
+    title: "Fanfarenzug Hergershausen",
+    description: "Live Musik mit dem Fanfarenzug Hergershausen",
+    icon: Music,
     highlight: true
   }, {
     time: "15:00",
@@ -38,7 +67,7 @@ const EventProgram = () => {
     icon: Users,
     highlight: true
   }, {
-    time: "16:00",
+    time: "18:00",
     title: "Finale & Siegerehrung",
     description: "Die besten Teams kämpfen ums Finale",
     icon: Trophy
