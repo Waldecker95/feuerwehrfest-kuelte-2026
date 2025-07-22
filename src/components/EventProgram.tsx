@@ -14,14 +14,9 @@ const EventProgram = () => {
     icon: Trophy,
     highlight: true
   }, {
-    time: "15:00",
-    title: "Kaffee & Kuchen",
-    description: "Gemütliche Pause mit hausgemachtem Kuchen",
-    icon: Users
-  }, {
     time: "18:00",
-    title: "Live Musik",
-    description: "Abendprogramm mit Spielmannszug Höringhausen",
+    title: "Spielmannszug Höringhausen",
+    description: "Live Musik mit dem Spielmannszug Höringhausen",
     icon: Music,
     highlight: true
   }];
