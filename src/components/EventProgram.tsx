@@ -19,6 +19,12 @@ const EventProgram = () => {
     description: "Live Musik mit dem Spielmannszug Höringhausen",
     icon: Music,
     highlight: true
+  }, {
+    time: "19:00",
+    title: "Live Musik",
+    description: "Abendprogramm mit Live Musik",
+    icon: Music,
+    highlight: true
   }];
   const sundayProgram = [{
     time: "10:00",
