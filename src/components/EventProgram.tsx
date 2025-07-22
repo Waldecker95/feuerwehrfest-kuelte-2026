@@ -34,7 +34,7 @@ const EventProgram = () => {
   }, {
     time: "10:30",
     title: "Frühschoppen",
-    description: "Frühschoppen mit den Stadtmusikschängern Külte",
+    description: "Frühschoppen mit den Stammtischsängern Külte",
     icon: Music,
     highlight: true
   }, {
