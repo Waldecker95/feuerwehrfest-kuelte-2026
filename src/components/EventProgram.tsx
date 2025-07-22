@@ -19,7 +19,7 @@ const EventProgram = () => {
     description: "Gemütliche Pause mit hausgemachtem Kuchen",
     icon: Users
   }, {
-    time: "19:00",
+    time: "18:00",
     title: "Live Musik",
     description: "Abendprogramm mit Müller Meier Schulze",
     icon: Music,
