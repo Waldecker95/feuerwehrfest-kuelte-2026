@@ -21,7 +21,7 @@ const EventProgram = () => {
   }, {
     time: "18:00",
     title: "Live Musik",
-    description: "Abendprogramm mit Müller Meier Schulze",
+    description: "Abendprogramm mit Spielmannszug Höringhausen",
     icon: Music,
     highlight: true
   }];
