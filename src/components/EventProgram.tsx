@@ -57,8 +57,8 @@ const EventProgram = () => {
     highlight: true
   }, {
     time: "15:00",
-    title: "Fanfarenzug Hergershausen",
-    description: "Live Musik mit dem Fanfarenzug Hergershausen",
+    title: "Fanfarenzug Mengeringhausen",
+    description: "Live Musik mit dem Fanfarenzug Mengeringhausen",
     icon: Music,
     highlight: true
   }, {
