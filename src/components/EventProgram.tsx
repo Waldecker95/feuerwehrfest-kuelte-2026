@@ -68,7 +68,7 @@ const EventProgram = () => {
     highlight: true
   }, {
     time: "18:00",
-    title: "Finale & Siegerehrung",
+    title: "Siegerehrung der Straßenwettbewerbe",
     description: "Die besten Teams kämpfen ums Finale",
     icon: Trophy
   }, {
