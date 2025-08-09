@@ -83,7 +83,7 @@ const BeerpongRules = () => {
                 <ul className="space-y-2 text-sm">
                   <li>• Gespielt wird mit <span className="font-medium">6 oder 10 Bechern</span> pro Team</li>
                   <li>• Genaue Anzahl wird zu Turnierbeginn bekannt gegeben</li>
-                  <li>• Becher werden mit <span className="font-medium">Wasser</span> gefüllt</li>
+                  <li>• Becher werden mit <span className="font-medium">Bier</span> gefüllt</li>
                 </ul>
               </div>
 
