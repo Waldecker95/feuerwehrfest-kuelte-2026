@@ -138,7 +138,7 @@ const BeerpongAnmeldung = () => {
               </div>
               <div className="flex flex-col items-center">
                 <Trophy className="w-8 h-8 mb-2" />
-                <div className="text-2xl font-bold">13:00 Uhr</div>
+                <div className="text-2xl font-bold">14:30 Uhr</div>
                 <div className="text-white/80">Turnierbeginn</div>
               </div>
               <div className="flex flex-col items-center">
