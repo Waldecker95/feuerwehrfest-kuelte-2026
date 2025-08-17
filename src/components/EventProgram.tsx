@@ -3,26 +3,32 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 const EventProgram = () => {
   const saturdayProgram = [{
-    time: "10:00",
-    title: "Aufbau & Vorbereitung",
-    description: "Aufbau der Spielfelder und Bühne",
+    time: "11:00",
+    title: "Aufstellung zum Festzug",
+    description: "Hinter dem Schoppen Richtung Nordwaldeckhalle",
     icon: Users
   }, {
-    time: "12:00",
-    title: "Straßenhandball-Turnier",
-    description: "Traditionelles Turnier der Külter Straßenmannschaften - Feste Teams",
+    time: "12:30",
+    title: "Straßenturnier 2025",
+    description: "der Külter Straßenmannschaften",
     icon: Trophy,
     highlight: true
   }, {
+    time: "12:30",
+    title: "Kinderprogramm",
+    description: "Spiele und Aktivitäten für die kleinen Gäste",
+    icon: Users,
+    highlight: true
+  }, {
     time: "18:00",
-    title: "Spielmannszug Höringhausen",
-    description: "Live Musik mit dem Spielmannszug Höringhausen",
+    title: "Spielmannszug Bad Arolsen/Höringhausen",
+    description: "Live Musik mit dem Spielmannszug",
     icon: Music,
     highlight: true
   }, {
-    time: "19:00",
-    title: "Live Musik",
-    description: "Abendprogramm mit Live Musik",
+    time: "20:00",
+    title: "Party mit Liveband \"Müller Meier Schulze\"",
+    description: "Live Musik und Party bis spät in die Nacht",
     icon: Music,
     highlight: true
   }];
