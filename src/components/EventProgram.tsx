@@ -38,7 +38,7 @@ const EventProgram = () => {
     description: "Gemeinsamer Gottesdienst",
     icon: Users
   }, {
-    time: "10:30",
+    time: "anschl.",
     title: "Frühschoppen",
     description: "Frühschoppen mit den Stammtischsängern Külte",
     icon: Music,
@@ -46,43 +46,49 @@ const EventProgram = () => {
   }, {
     time: "11:00",
     title: "Kinderprogramm",
-    description: "Spiele und Aktivitäten für die kleinen Gäste",
+    description: "mit dem Förderverein KiGa Külte",
     icon: Users,
     highlight: true
   }, {
     time: "12:00",
     title: "Spiele ohne Grenzen",
-    description: "Spiele ohne Grenzen der Külter Straßenmannschaften",
+    description: "der Külter Straßenmannschaften",
     icon: Trophy,
     highlight: true
   }, {
     time: "13:00",
     title: "Beerpong-Turnier",
-    description: "Anmeldung erforderlich - Spannende Matches mit Preisen",
+    description: "Anmeldung erforderlich - Start ab 14:30 Uhr",
     icon: Trophy,
     highlight: true
   }, {
-    time: "15:00",
-    title: "Fanfarenzug Mengeringhausen",
-    description: "Live Musik mit dem Fanfarenzug Mengeringhausen",
+    time: "14:00",
+    title: "Kaffee- und Kuchentafel",
+    description: "der Landfrauen Külte",
+    icon: Users,
+    highlight: true
+  }, {
+    time: "14:15",
+    title: "Tanzeinlage",
+    description: "der \"Külter Küken und Kracher\"",
     icon: Music,
     highlight: true
   }, {
     time: "15:00",
-    title: "Großes Kuchenbuffet der Külter Landfrauen",
-    description: "Hausgemachte Kuchen und Torten",
-    icon: Users,
+    title: "Fanfarenzug Mengeringhausen",
+    description: "Live Musik mit dem Fanfarenzug",
+    icon: Music,
     highlight: true
   }, {
-    time: "18:00",
+    time: "16:00",
     title: "Siegerehrung der Straßenwettbewerbe",
-    description: "Die besten Teams kämpfen ums Finale",
+    description: "Ehrung der Gewinner der Straßenwettbewerbe",
     icon: Trophy
   }, {
     time: "18:00",
-    title: "Gemütlicher Ausklang",
-    description: "Entspanntes Beisammensein mit Getränken",
-    icon: Users
+    title: "Siegerehrung Bierpong-Turnier",
+    description: "Ehrung der Beerpong-Champions",
+    icon: Trophy
   }];
   return <section id="programm" className="py-16 px-4 bg-white">
       <div className="container mx-auto">
