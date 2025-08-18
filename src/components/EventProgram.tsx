@@ -56,12 +56,6 @@ const EventProgram = () => {
     icon: Trophy,
     highlight: true
   }, {
-    time: "14:30",
-    title: "Beerpong-Turnier",
-    description: "Anmeldung erforderlich",
-    icon: Trophy,
-    highlight: true
-  }, {
     time: "14:00",
     title: "Kaffee- und Kuchentafel",
     description: "der Landfrauen Külte",
@@ -72,6 +66,12 @@ const EventProgram = () => {
     title: "Tanzeinlage",
     description: "der \"Külter Küken und Kracher\"",
     icon: Music,
+    highlight: true
+  }, {
+    time: "14:30",
+    title: "Beerpong-Turnier",
+    description: "Anmeldung erforderlich",
+    icon: Trophy,
     highlight: true
   }, {
     time: "15:00",
