@@ -49,41 +49,24 @@ const BeerpongRegistration = () => {
     setIsSubmitting(true);
 
     try {
-      // Insert into Supabase
-      const { data, error } = await supabase
-        .from('beerpong_registrations')
-        .insert({
-          team_name: formData.teamName,
+      // Register team using the new secure Edge Function
+      const { data, error } = await supabase.functions.invoke('register-team', {
+        body: {
+          teamName: formData.teamName,
           player1: formData.player1,
           player2: formData.player2,
           email: formData.email,
           phone: formData.phone || null,
-          newsletter_subscription: formData.newsletter
-        })
-        .select();
+          newsletter: formData.newsletter
+        }
+      });
 
       if (error) {
         throw error;
       }
 
-      // Send confirmation email
-      try {
-        const { error: emailError } = await supabase.functions.invoke('send-registration-confirmation', {
-          body: {
-            teamId: data[0].id,
-            teamName: formData.teamName,
-            player1: formData.player1,
-            player2: formData.player2,
-            email: formData.email
-          }
-        });
-
-        if (emailError) {
-          console.error('Error sending confirmation email:', emailError);
-        }
-      } catch (emailError) {
-        console.error('Failed to send confirmation email:', emailError);
-        // Don't block registration if email fails
+      if (data.error) {
+        throw new Error(data.error);
       }
       
       toast({
