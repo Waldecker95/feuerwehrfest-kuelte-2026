@@ -45,7 +45,7 @@ const createReminderEmail = (teamName: string, player1: string, player2: string)
     <h3 style="color: #856404; margin-top: 0;">🎯 Noch einmal alle wichtigen Infos:</h3>
     <ul style="color: #856404;">
       <li><strong>Datum:</strong> Sonntag, 24. August 2025</li>
-      <li><strong>Uhrzeit:</strong> 13:00 Uhr (bitte 30 Min früher da sein)</li>
+      <li><strong>Uhrzeit:</strong> 14:30 Uhr (bitte 30 Min früher da sein)</li>
       <li><strong>Ort:</strong> Dorffest Külte 2025</li>
       <li><strong>Startgebühr:</strong> 15€ pro Team (bar vor Ort)</li>
       <li><strong>Mitzubringen:</strong> Personalausweise, gute Laune!</li>

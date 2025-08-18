@@ -56,9 +56,9 @@ const EventProgram = () => {
     icon: Trophy,
     highlight: true
   }, {
-    time: "13:00",
+    time: "14:30",
     title: "Beerpong-Turnier",
-    description: "Anmeldung erforderlich - Start ab 14:30 Uhr",
+    description: "Anmeldung erforderlich",
     icon: Trophy,
     highlight: true
   }, {

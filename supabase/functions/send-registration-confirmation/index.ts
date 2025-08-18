@@ -53,7 +53,7 @@ const createConfirmationEmail = (teamName: string, player1: string, player2: str
     <h3 style="color: #2d5016; margin-top: 0;">📅 Wichtige Turnier-Informationen:</h3>
     <ul style="color: #2d5016;">
       <li><strong>Datum:</strong> Sonntag, 24. August 2025</li>
-      <li><strong>Uhrzeit:</strong> Turnierbeginn um 13:00 Uhr</li>
+      <li><strong>Uhrzeit:</strong> Turnierbeginn um 14:30 Uhr</li>
       <li><strong>Treffpunkt:</strong> Bitte seid 30 Minuten vor Turnierbeginn da</li>
       <li><strong>Startgebühr:</strong> 15€ (bitte vor Ort bezahlen)</li>
       <li><strong>Preise:</strong> Tolle Preise im Wert von 250€ warten auf euch!</li>
