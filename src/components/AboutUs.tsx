@@ -106,11 +106,18 @@ const AboutUs = () => {
                   Löschzug Külte
                 </Badge>
               </div>
-              <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-center">
-                <h4 className="font-semibold text-gray-800 mb-2">Bewirtung:</h4>
-                <p className="text-gray-700 text-sm font-medium">Eventservice und Bewirtung</p>
-                <p className="text-gray-700 text-sm font-bold">Evi und Ajdini</p>
-                <a href="tel:01765623169" className="text-red-600 text-sm hover:underline">01765 623169</a>
+              <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-center space-y-2">
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-1">Wehrführer:</h4>
+                  <p className="text-gray-700 text-sm">Till Wilke</p>
+                  <a href="tel:01626949325" className="text-red-600 text-sm hover:underline block">0162 6949325</a>
+                  <a href="mailto:wehrfuehrer@feuerwehr-kuelte.de" className="text-red-600 text-sm hover:underline block">wehrfuehrer@feuerwehr-kuelte.de</a>
+                </div>
+                <div className="border-t border-red-100 pt-2">
+                  <h4 className="font-semibold text-gray-800 mb-1">Bewirtung:</h4>
+                  <p className="text-gray-700 text-sm font-bold">Evi und Ajdini</p>
+                  <a href="tel:01765623169" className="text-red-600 text-sm hover:underline">01765 623169</a>
+                </div>
               </div>
             </CardContent>
           </Card>

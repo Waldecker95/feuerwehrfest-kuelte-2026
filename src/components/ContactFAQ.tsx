@@ -167,13 +167,13 @@ const ContactFAQ = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:info@feuerwehr-kuelte.de"
+                  href="mailto:wehrfuehrer@feuerwehr-kuelte.de"
                   className="flex items-center space-x-3 p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors"
                 >
                   <Mail className="w-5 h-5 text-red-600" />
                   <div>
-                    <div className="font-semibold text-gray-800">E-Mail</div>
-                    <div className="text-gray-600 text-sm">info@feuerwehr-kuelte.de</div>
+                    <div className="font-semibold text-gray-800">E-Mail Wehrführer</div>
+                    <div className="text-gray-600 text-sm">wehrfuehrer@feuerwehr-kuelte.de</div>
                   </div>
                 </a>
               </CardContent>

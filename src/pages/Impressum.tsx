@@ -41,11 +41,13 @@ const Impressum = () => {
               <CardTitle className="text-gray-900">Angaben gemäß § 5 TMG</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-gray-700">
-              <p className="font-semibold">Freiwillige Feuerwehr Volkmarsen</p>
-              <p>Löschzug Külte</p>
-              <p>Sportplatz Külte</p>
-              <p>34471 Volkmarsen</p>
+              <p className="font-semibold">Freiwillige Feuerwehr Külte</p>
+              <p>Hortweg 36</p>
+              <p>34471 Volkmarsen (Ortsteil Külte)</p>
               <p>Hessen, Deutschland</p>
+              <p className="text-sm text-gray-500 pt-1">
+                Eingetragen im Vereinsregister der Stadt Volkmarsen (seit 04.11.2018)
+              </p>
             </CardContent>
           </Card>
 
@@ -54,20 +56,39 @@ const Impressum = () => {
             <CardHeader>
               <CardTitle className="text-gray-900">Kontakt</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-gray-700">
-              <p>
-                <span className="font-medium">Bewirtung / Veranstaltungskontakt:</span>
-              </p>
-              <p>Eventservice und Bewirtung Evi und Ajdini</p>
-              <p>
-                Telefon:{" "}
-                <a href="tel:01765623169" className="text-red-600 hover:underline">
-                  01765 623169
-                </a>
-              </p>
-              <p className="mt-4 text-sm text-gray-500">
-                Für inhaltliche Anfragen zur Website wenden Sie sich bitte per E-Mail an uns.
-              </p>
+            <CardContent className="space-y-3 text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Wehrführer</p>
+                <p>Till Wilke</p>
+                <p>
+                  Telefon:{" "}
+                  <a href="tel:01626949325" className="text-red-600 hover:underline">
+                    0162 6949325
+                  </a>
+                </p>
+                <p>
+                  E-Mail:{" "}
+                  <a href="mailto:wehrfuehrer@feuerwehr-kuelte.de" className="text-red-600 hover:underline">
+                    wehrfuehrer@feuerwehr-kuelte.de
+                  </a>
+                </p>
+                <p>
+                  Website:{" "}
+                  <a href="https://www.feuerwehr-kuelte.de" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">
+                    www.feuerwehr-kuelte.de
+                  </a>
+                </p>
+              </div>
+              <div className="border-t border-red-100 pt-3">
+                <p className="font-medium mb-1">Bewirtung & Veranstaltung</p>
+                <p>Eventservice und Bewirtung Evi und Ajdini</p>
+                <p>
+                  Telefon:{" "}
+                  <a href="tel:01765623169" className="text-red-600 hover:underline">
+                    01765 623169
+                  </a>
+                </p>
+              </div>
             </CardContent>
           </Card>
 
@@ -77,8 +98,9 @@ const Impressum = () => {
               <CardTitle className="text-gray-900">Verantwortlich für den Inhalt (gem. § 18 Abs. 2 MStV)</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2 text-gray-700">
-              <p className="font-semibold">Freiwillige Feuerwehr Volkmarsen, Löschzug Külte</p>
-              <p>34471 Volkmarsen</p>
+              <p className="font-semibold">Till Wilke (Wehrführer)</p>
+              <p>Freiwillige Feuerwehr Külte</p>
+              <p>Hortweg 36, 34471 Volkmarsen</p>
             </CardContent>
           </Card>
 
