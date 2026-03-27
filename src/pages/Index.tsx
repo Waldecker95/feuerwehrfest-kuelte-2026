@@ -1,7 +1,5 @@
-import { Calendar, MapPin, Users, Trophy, Mail, Phone, Menu } from "lucide-react";
+import { Flame, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import EventHero from "@/components/EventHero";
 import EventProgram from "@/components/EventProgram";
@@ -12,38 +10,45 @@ import AboutUs from "@/components/AboutUs";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white/90 backdrop-blur-sm border-b border-primary/20 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <nav className="bg-red-700 text-white sticky top-0 z-50 shadow-md">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-primary">KÜLTE 2025</div>
-            
+            <div className="flex items-center space-x-2">
+              <Flame className="w-6 h-6 text-orange-300" />
+              <span className="text-lg font-bold tracking-wide">Feuerwehrfest Külte 2026</span>
+            </div>
+
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6">
-              <a href="#programm" className="text-primary hover:text-primary/80 transition-colors">Programm</a>
-              <a href="#anmeldung" className="text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
-              <a href="/beerpong-anmeldung" className="text-primary hover:text-primary/80 transition-colors">Beerpong</a>
-              <a href="#karte" className="text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
-              <a href="#kontakt" className="text-primary hover:text-primary/80 transition-colors">Kontakt</a>
-              <a href="#ueber-uns" className="text-primary hover:text-primary/80 transition-colors">Über uns</a>
+            <div className="hidden md:flex space-x-6 text-sm font-medium">
+              <a href="#programm" className="hover:text-orange-300 transition-colors">Programm</a>
+              <a href="#anmeldung" className="hover:text-orange-300 transition-colors">Beerpong</a>
+              <a href="#karte" className="hover:text-orange-300 transition-colors">Anfahrt</a>
+              <a href="#kontakt" className="hover:text-orange-300 transition-colors">Kontakt</a>
+              <a href="#ueber-uns" className="hover:text-orange-300 transition-colors">Über uns</a>
+              <a href="/impressum" className="hover:text-orange-300 transition-colors">Impressum</a>
             </div>
 
             {/* Mobile Navigation */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="md:hidden text-white hover:bg-red-600">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col space-y-4 mt-8">
-                  <a href="#programm" className="text-lg text-primary hover:text-primary/80 transition-colors">Programm</a>
-                  <a href="#anmeldung" className="text-lg text-primary hover:text-primary/80 transition-colors">Anmeldung</a>
-                  <a href="/beerpong-anmeldung" className="text-lg text-primary hover:text-primary/80 transition-colors">Beerpong</a>
-                  <a href="#karte" className="text-lg text-primary hover:text-primary/80 transition-colors">Anfahrt</a>
-                  <a href="#kontakt" className="text-lg text-primary hover:text-primary/80 transition-colors">Kontakt</a>
-                  <a href="#ueber-uns" className="text-lg text-primary hover:text-primary/80 transition-colors">Über uns</a>
+              <SheetContent side="right" className="w-[280px]">
+                <div className="flex items-center space-x-2 mb-8 pt-2">
+                  <Flame className="w-6 h-6 text-red-600" />
+                  <span className="font-bold text-gray-900">Feuerwehrfest Külte</span>
+                </div>
+                <nav className="flex flex-col space-y-4">
+                  <a href="#programm" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Programm</a>
+                  <a href="#anmeldung" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Beerpong</a>
+                  <a href="#karte" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Anfahrt</a>
+                  <a href="#kontakt" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Kontakt</a>
+                  <a href="#ueber-uns" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Über uns</a>
+                  <a href="/impressum" className="text-lg text-gray-800 hover:text-red-600 transition-colors">Impressum</a>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -61,23 +66,23 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-8">
+      <footer className="bg-red-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <div className="space-y-4">
-            <div className="text-2xl font-bold">KÜLTE Open Air Event 2025</div>
-            <p className="text-primary-foreground/80">23.-24. August 2025 • Turnier der Straßenmannschaften</p>
-            <div className="flex justify-center space-x-6">
-              <Badge variant="outline" className="bg-white/20 text-white border-white/30">
-                kuelte-events.de
-              </Badge>
+          <div className="space-y-3">
+            <div className="flex items-center justify-center space-x-2">
+              <Flame className="w-6 h-6 text-orange-300" />
+              <span className="text-xl font-bold">Feuerwehrfest Külte 2026</span>
             </div>
-            <p className="text-sm text-primary-foreground/60">
-              Instagram: @DORFFEST_KULTE_2025
-            </p>
+            <p className="text-white/80">05. – 07. Juni 2026 · Festzelt auf dem Sportplatz in Külte</p>
+            <p className="text-white/70 text-sm">Freiwillige Feuerwehr Volkmarsen-Külte</p>
+            <div className="flex justify-center space-x-4 pt-2 text-sm text-white/60">
+              <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+            </div>
           </div>
         </div>
       </footer>
     </div>
   );
 };
+
 export default Index;
